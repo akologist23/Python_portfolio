@@ -1,0 +1,3 @@
+{"category":" Scripting",
+"overview": "This python script prompts the user to enter a message in alphanumeric characters and then translates the message to morse code. The user can enter as many messages as they choose, or close the program.",
+"details": "The python script uses object oriented programming by creating a Morse class which loads a morse code crosswalk from a public github repository. The program returns the translated characters of each word as a list."}
