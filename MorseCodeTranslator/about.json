@@ -1,4 +1,4 @@
 {"name":"Morse Code Translator",
-"category":"Web Scraping",
-"overview":"This python script scrapes a public google doc containing a crosswalk table of coordinates with symbols. The script scrapes the table values and then uses them to print out a secret message using the coordinates.",
-"details":"The python script relies on beautiful soup and the requests packages to parse the html on the Google Doc webpage. The script then puts each row of the table into a sublist and creates a dictionary of characters based on their coordinate tuple. Finally, the script reveals the secret message by printing the characters to the screen by iterating over each combination of coordinates and printing row-wise, starting with the maximum y values."}
+"category":"Scripting",
+"overview":"This python script prompts the user to enter a message in alphanumeric characters and then translates the message to morse code. The user can enter as many messages as they choose, or close the program.",
+"details":"The python script uses object oriented programming by creating a Morse class which loads a morse code crosswalk from a public github repository. The program returns the translated characters of each word as a list."}
