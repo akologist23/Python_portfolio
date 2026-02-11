@@ -1,0 +1,4 @@
+{"name":"Tic Tac Toe",
+"category":"Scripting",
+"overview":"This python script creates a text-based Tic Tac Toe game.",
+"details":"The python script uses object oriented programming to create a Tic Tac Toe class which can be loaded to program a Tic Tac Toe Game. The player can select their preferred symbol (O or X) and can choose whether or not to go first. The computer plays by randomly selecting an open area on the board. The player has the choice to play again."}
