@@ -1,4 +1,4 @@
 {"name":"Watermark Generator",
 "category":"GUI",
 "overview":"This python script creates a GUI to load an image and save it with a watermark on it.",
-"details":"The python script relies on tkinter to create a GUI for working with image files. The GUI is set up with four functionalities. The first is to upload a photo with user-specified dimensions. Second, the user can add a watermark which appears in the middle of the image. Third, the user can save the image as a .png file. Finally, the user can clear the prior image in order to load another."}
+"details":"The python script uses the tkinter package to create a GUI for working with image files. The GUI is set up with four functionalities. The first is to upload a photo with user-specified dimensions. Second, the user can add a watermark which appears in the middle of the image. Third, the user can save the image as a .png file. Finally, the user can clear the prior image in order to load another."}
