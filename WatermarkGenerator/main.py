@@ -44,7 +44,7 @@ def clear_image():
     canvas.delete("all")
 
 def add_watermark():
-    watermark_text = canvas.create_text(int(PHOTO_WIDTH/2), int(PHOTO_HEIGHT/2), text = "WATERMARK",
+    watermark_text = canvas.create_text(int(PHOTO_WIDTH/2), int(PHOTO_HEIGHT/2), text = "WATERMARK", angle = 45,
                                         font = (FONT_NAME, int(PHOTO_WIDTH/10), "bold"), fill = WATERMARK_COLOR)
 
 def save_image():
