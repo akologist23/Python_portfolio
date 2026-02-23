@@ -138,10 +138,8 @@ time_num.grid(column=4, row=7, columnspan=1)
 spacer2 = Label(text = "", background = PURPLE)
 spacer2.grid(column=5, row=8, columnspan = 1)
 
-test_text = Text(width = 80, height = 7 , fg = GREY, font = (FONT_NAME,P_FONT_SIZE),
-           wrap = "word")
-test_text.insert("1.0", chars =text_string ) #TEXT_STRING
-#test_text['state'] = 'disabled'
+test_text = Text(width = 80, height = 7 , fg = GREY, font = (FONT_NAME,P_FONT_SIZE),wrap = "word")
+test_text.insert("1.0", chars =text_string )
 test_text.grid(column = 0, row = 9, columnspan = 9)
 
 spacer1 = Label(text = "", background = PURPLE)
