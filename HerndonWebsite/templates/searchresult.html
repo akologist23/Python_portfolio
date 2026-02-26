@@ -1,0 +1,75 @@
+{% include "header.html" %}
+<body>
+    <div class="container py-4">
+
+        {% include "navbar.html" %}
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 jumbotron bg-warning-subtle text-white rounded-3">
+                <h2 class="display-5 fw-bold">Find a place to work in Herndon</h2>
+                <p>If you're looking for a place to take a work call, check some emails, or pass some time on your electronics - while in Herndon! - this site is here to help you. Browse through Herndon's best public places and search using custom criteria.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1GIq15dy0OQEFHI8ENGsmzlK3Llv3i2M&ehbc=2E312F&noprof=1" width = 620 height = 370></iframe>
+            </div>
+        </div>
+        <br>
+
+        <div class="container-fluid py-5">
+            <ul class="list-group">
+
+            <!-- Locations -->
+            {% for place in all_places %}
+
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{place.img_url}}">
+                            </div>
+                                <div class="col-7">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <p></p>
+                                            <p></p>
+                                            <h2 class="mb-0 text-start fw-bold">{{place.name}}</h2>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start">{{place.location}}</h4>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start text-primary">{{place.phone}}</h4>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start">{{place.hours}}</h4>
+                                            <p></p>
+                                            <div class="d-flex gap-2 justify-content-left py-5">
+                                                {% if place.has_wifi %}
+                                                <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Wifi</span>
+                                                {% endif %}
+                                                {% if place.has_sockets %}
+                                                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill">Sockets</span>
+                                                {% endif %}
+                                                {% if place.is_spacious %}
+                                                <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Spacious</span>
+                                                {% endif %}
+                                                {% if place.has_toilet %}
+                                                <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">Restrooms</span>
+                                                {% endif %}
+                                                {% if place.has_food %}
+                                                <span class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Food</span>
+                                                {% endif %}
+                                                {% if place.can_take_calls %}
+                                                <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Calls</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

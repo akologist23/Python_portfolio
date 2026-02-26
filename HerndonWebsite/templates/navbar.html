@@ -1,0 +1,16 @@
+    <header class="p-3 mb-3 border-bottom">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ url_for('home') }}" class="nav-link px-3 link-dark">Home</a></li>
+                <li><a href="{{ url_for('add') }}" class="nav-link px-3 link-dark">New Site</a></li>
+            </ul>
+            <ul class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 justify-content-center mb-md-0">
+            <form action="{{ url_for('search') }}" method="POST">
+                <input class ="col-8" type="search" class="form-control" placeholder="enter site name" id="search-field" name="site_name">
+                <button class ="col-3" type="submit" class="btn btn-dark">Search</button>
+            </form>
+            </ul>
+            </div>
+
+        </header>

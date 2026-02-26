@@ -1,0 +1,159 @@
+
+
+{% include "header.html" %}
+
+<body>
+    <div class="container py-4">
+
+       {% include "navbar.html" %}
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 jumbotron bg-warning-subtle text-white rounded-3">
+                <h2 class="display-5 fw-bold">Find a place to work in Herndon</h2>
+                <p>If you're looking for a place to take a work call, check some emails, or pass some time on your electronics - while in Herndon! - this site is here to help you. Browse through Herndon's best public places and search using custom criteria.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1GIq15dy0OQEFHI8ENGsmzlK3Llv3i2M&ehbc=2E312F&noprof=1" width = 620 height = 370></iframe>
+            </div>
+        </div>
+        <br>
+          <div class="container text-center">
+            <form action="{{ url_for('home') }}" method="POST">
+                <div class="row">
+                <!-- The hidden input ensures a value is always submitted -->
+
+                <div class="col">
+                    <!-- WIFI toggle -->
+                    {% if toggles.count('wifi') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-wifi-on" checked autocomplete="off" name = "filters" value="wifi">
+                    <label class="btn btn-outline-primary btn-lg" for="btn-check-wifi-on">Wifi <img src="static/assets/wifi.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-wifi-off" autocomplete="off" name = "filters" value="wifi">
+                    <label class="btn btn-outline-primary btn-lg" for="btn-check-wifi-off">Wifi <img src="static/assets/wifi.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <!-- Socket toggle -->
+                    {% if toggles.count('socket') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-sockets-on" checked autocomplete="off" name = "filters" value="socket">
+                    <label class="btn btn-outline-secondary btn-lg" for="btn-check-sockets-on">Sockets <img src="static/assets/plug.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-sockets-off" autocomplete="off" name = "filters" value="socket">
+                    <label class="btn btn-outline-secondary btn-lg" for="btn-check-sockets-off">Sockets <img src="static/assets/plug.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <!-- Spacious toggle -->
+                    {% if toggles.count('spacious') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-spacious-on" checked autocomplete="off" name = "filters" value="spacious">
+                    <label class="btn btn-outline-success btn-lg" for="btn-check-spacious-on">Spacious <img src="static/assets/arrows.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-spacious-off" autocomplete="off" name = "filters" value="spacious">
+                    <label class="btn btn-outline-success btn-lg" for="btn-check-spacious-off">Spacious <img src="static/assets/arrows.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+                  <div class="col">
+                    <!-- Toilet toggle -->
+                    {% if toggles.count('toilet') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-toilet-on" checked autocomplete="off" name = "filters" value="toilet">
+                    <label class="btn btn-outline-danger btn-lg" for="btn-check-toilet-on">Restroom <img src="static/assets/toilet.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-toilet-off" autocomplete="off" name = "filters" value="toilet">
+                    <label class="btn btn-outline-danger btn-lg" for="btn-check-toilet-off">Restoom <img src="static/assets/toilet.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <!-- Food toggle -->
+                    {% if toggles.count('food') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-food-on" checked autocomplete="off" name = "filters" value="food">
+                    <label class="btn btn-outline-warning btn-lg" for="btn-check-food-on">Food <img src="static/assets/food.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-food-off" autocomplete="off" name = "filters" value="food">
+                    <label class="btn btn-outline-warning btn-lg" for="btn-check-food-off">Food <img src="static/assets/food.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <!-- Calls toggle -->
+                    {% if toggles.count('call') > 0 %}
+                    <input type="checkbox" class="btn-check" id="btn-check-calls-on" checked autocomplete="off" name = "filters" value="call">
+                    <label class="btn btn-outline-info btn-lg" for="btn-check-calls-on">Calls <img src="static/assets/phone.svg" width="40" height="40"></label>
+                    {% else %}
+                    <input type="checkbox" class="btn-check" id="btn-check-calls-off" autocomplete="off" name = "filters" value="call">
+                    <label class="btn btn-outline-info btn-lg" for="btn-check-calls-off">Calls <img src="static/assets/phone.svg" width="40" height="40"></label>
+                    {% endif %}
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="container text-center">
+                    <button type="submit">Apply Filters</button>
+                </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="container-fluid py-5">
+            <ul class="list-group">
+
+            <!-- Locations -->
+            {% for place in all_places %}
+
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{place.img_url}}">
+                            </div>
+                                <div class="col-7">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <p></p>
+                                            <p></p>
+                                            <h2 class="mb-0 text-start fw-bold">{{place.name}}</h2>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start">{{place.location}}</h4>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start text-primary">{{place.phone}}</h4>
+                                            <p></p>
+                                            <h4 class="mb-0 opacity-75 text-start">{{place.hours}}</h4>
+                                            <p></p>
+                                            <div class="d-flex gap-2 justify-content-left py-5">
+                                                {% if place.has_wifi %}
+                                                <span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill">Wifi</span>
+                                                {% endif %}
+                                                {% if place.has_sockets %}
+                                                <span class="badge bg-secondary-subtle border border-secondary-subtle text-secondary-emphasis rounded-pill">Sockets</span>
+                                                {% endif %}
+                                                {% if place.is_spacious %}
+                                                <span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Spacious</span>
+                                                {% endif %}
+                                                {% if place.has_toilet %}
+                                                <span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">Restrooms</span>
+                                                {% endif %}
+                                                {% if place.has_food %}
+                                                <span class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Food</span>
+                                                {% endif %}
+                                                {% if place.can_take_calls %}
+                                                <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">Calls</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

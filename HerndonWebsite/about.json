@@ -1,0 +1,4 @@
+{"name":"Find Work Locations Website",
+"category":"Web Development",
+"overview":"This python program creates a website for finding a work location in the town of Herndon.",
+"details":"The python program uses flask as the backend web framework and connects to a sqlite database for the main content. The website offers work locations in the town of Herndon, provided as a filterable and searchable list. AA data on the work locations is stored in an SQlite database. The website allows users to add a new location using a form on the /search page, which adds the site details directly into the database and returns the user to a confirmation page. The website also allows a user to delete a location by using the path /delete/<name of location> which is a hidden page without direct links to it."}

@@ -1,0 +1,155 @@
+{% include "header.html" %}
+<body>
+    <div class="container py-4">
+
+        {% include "navbar.html" %}
+
+    <div class="card text-dark w-125 mb-3">
+    <div class="card-body card-item">
+    <h5 class="card-title">Add a New Site</h5>
+    <p class="card-text">Submit the details of the new site below.</p>
+    </div>
+</div>
+
+   <div class="row">
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card card-item">
+      <div class="card-body">
+        <form method="POST" action="{{ url_for('add') }}">
+        <h5 class="card-title">Location Details</h5>
+        <p class="card-text"></p>
+        <div class="row">
+        <div class="col-3">
+        <label for="place_name" class="form-label">Location Name</label>
+            </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="place_name" name="place_name" placeholder value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
+        <label for="map_url" class="form-label">Map URL</label>
+           </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="map_url" name="map_url" placeholder value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+         <br>
+        <div class="row">
+        <div class="col-3">
+        <label for="img_url" class="form-label">Image URL</label>
+            </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="img_url" name="img_url" placeholder="500x300 pixels" value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
+        <label for="address" class="form-label">Address</label>
+            </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="address" name="address" placeholder value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
+        <label for="phonenumber" class="form-label">Phone Number</label>
+            </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-3">
+        <label for="hours" class="form-label">Hours</label>
+            </div>
+        <div class="col-6">
+        <input type="text" class="form-control" id="hours" name="hours" placeholder value required fdprocessedid="knf8i">
+        <div class="invalid-feedback">Valid location name is required</div>
+        </div>
+        </div>
+        <br>
+
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body card-item">
+        <h5 class="card-title">Amenities</h5>
+        <p class="card-text"></p>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="food" id="has_food" name="has_food">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="has_food">Food</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="toilet" id="has_toilet" name="has_toilet">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="has_toilet">Restrooms</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="wifi" id="has_wifi" name="has_wifi">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="has_wifi">Wifi</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="socket" id="has_sockets" name="has_sockets">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="has_sockets">Sockets</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="spacious" id="is_spacious" name="is_spacious">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="is_spacious">Spacious</label>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-1">
+        <input class="form-check-input" type="checkbox" value="call" id="can_take_calls" name="can_take_calls">
+        </div>
+        <div class="col-6">
+        <label class="form-check-label" for="can_take_calls">Take calls</label>
+        </div>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-secondary" type="submit">Add Site</button>
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</body>
+</html>
