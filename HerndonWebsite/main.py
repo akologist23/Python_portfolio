@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Boolean
@@ -154,12 +154,31 @@ def add():
 def confirm_add():
     return render_template("confirmation.html")
 
-@app.route('/delete/<name>', methods=["GET", "POST"])
+##NOTE THAT BROWSERS ONLY SUPPORT GET AND POST REQUESTS -> HENCE A BROWSER CALL TO DELETE A SITE WON'T WORK.
+##THE DATA WOULD NEED TO BE ACCESSED USING AN API CALL - THIS CAN BE TESTED IN POSTMAN!
+
+
+#API DELETE METHOD
+@app.route('/delete/<name>', methods=["DELETE"])
 def delete(name):
+    entered_api_key = request.args.get("api-key")
+    print(entered_api_key)
+    if entered_api_key == "abcdefg":
+        try:
+            delete_site(name)
+        except AttributeError:
+            return jsonify({"error": {"Not Found": "Sorry, we don't have a site with that name in the database."}}), 404
+        else:
+            return jsonify({"success": "Successfully deleted the site."}), 200
+    else:
+        return jsonify(error={"Forbidden": "Sorry, that's not allowed. Make sure you have the correct api_key."}), 403
+
+#BROWSER DELETE METHOD
+@app.route('/delete_site/<name>', methods=["GET", "POST"])
+def delete_from_browser(name):
     delete_site(name)
     return redirect(url_for("home"))
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=5088)
 
