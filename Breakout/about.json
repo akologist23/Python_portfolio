@@ -1,4 +1,4 @@
 {"name":"Breakout",
 "category":"Game",
-"overview":"This python program receates the original 1976 arcade game created by Atari.",
+"overview":"This python program recreates the original 1976 arcade game created by Atari.",
 "details":"The python program uses the turtle package and object oriented programming. The turtle package is used to create the paddle, ball, blocks, and score that move and change on the screen. The game is organized using object oriented programming to keep the game component details separate for the main logic of game play. The paddle, ball, blocks, and scoreboard have their own classes that are imported for play."}
