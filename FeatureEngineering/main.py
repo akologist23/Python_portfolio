@@ -17,6 +17,9 @@ for (key, value) in data.items():
 
 #Feature 1: Branch 1
 #TODO Create Calculated Values
+for (store, df) in data.items():
+    df['total_value'] = df['qty_stock'] * df['unit price']
+    print(df)
 
 #Feature 2: Branch 2
 #TODO Create summary statistics by group
