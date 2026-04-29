@@ -20,6 +20,19 @@ for (key, value) in data.items():
 
 #Feature 2: Branch 2
 #TODO Create summary statistics by group
+item_dict = {}
+for (store, df) in data.items():
+    #print(df.groupby(by='category').size())
+    output = df.groupby(by='category')['qty_stock'].agg(['count','sum'])
+    #print(output)
+    for item in output.index:
+        count = output[output.index == item]['count'].values[0].item()
+        sum = output[output.index == item]['count'].values[0].item()
+        item_dict[item] = {'count':  count,
+                            'sum': sum
+                           }
+
+print(item_dict)
 
 #Step 2: Main Branch
 #Sheet Summary Statistics with Calculated Values
