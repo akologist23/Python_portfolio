@@ -26,3 +26,8 @@ for (key, value) in data.items():
 
 #Feature 3: Branch 3
 #TODO Combine datasets
+df_comb = pd.DataFrame()
+for (store, df) in data.items():
+    df['store'] = store
+    df_comb = pd.concat([df_comb,df],axis=0)
+print(f"all stores: {df_comb.shape[0]} rows x {df_comb.shape[1]} columns")
