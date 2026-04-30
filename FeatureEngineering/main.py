@@ -19,12 +19,10 @@ data = pd.read_excel("store_inventory.xlsx", sheet_name=None)
 #TODO Create Calculated Values
 
 
-
 #Feature 2: Branch 2
 #TODO Create summary statistics by group
 
-#
-# print(item_dict)
+
 
 #Step 2: Main Branch
 #Sheet Summary Statistics with Calculated Values
