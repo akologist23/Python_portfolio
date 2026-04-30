@@ -39,9 +39,9 @@ print(item_dict)
 
 #Step 2: Main Branch
 #Sheet Summary Statistics with Calculated Values
-# for (store, df) in data.items():
-#     print(f"store-{store}: total inventory value ${df['total_value'].sum()}")
-#     print(df.describe())
+for (store, df) in data.items():
+    print(f"store-{store}: total inventory value ${df['total_value'].sum()}")
+    print(df.describe())
 
 #Feature 3: Branch 3
 #TODO Combine datasets
