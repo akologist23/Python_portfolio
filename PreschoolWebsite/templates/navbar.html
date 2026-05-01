@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="nav-flex-container" style="justify-content: space-around;">
+
+      <div class="nav1" style="background-color: white; flex-wrap: wrap; flex-grow: 2; ">
+        <img src="../static/images/logo_youchien_resized.png" alt="" width="600px" style="max-width: 100%;" />
+      </div>
+      <nav class="nav1" style="background-color: white; flex-grow: 1;">
+        <ul>
+          <li><a href="{{url_for('open_home_page', language='japanese')}}">About</a></li>
+          <li><a href="{{url_for('open_schedule_page', language='japanese')}}">Schedule</a></li>
+          <li><a href="{{url_for('open_contact_page', language='japanese')}}">Contact</a></li>
+          <li><a href="{{url_for('open_job_page', language='japanese')}}">Job Posting</a></li>
+          <li><form action="{{url_for('open_language_page', page=page, language='japanese') }}" method="POST" >
+              <button class="login-btn main-font-regular" type="submit" name="language" value="japanese"
+            >Japanese</button>
+          </form>
+          </li>
+        </ul>
+      </nav>
+  </div>
+
+</body>
+</html>

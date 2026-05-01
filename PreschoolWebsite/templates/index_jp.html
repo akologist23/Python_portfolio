@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include 'header_jp.html' %}
+</head>
+  <body>
+  {% include 'navbar_jp.html' %}
+    <div class="container">
+
+      <div class="grid-container"
+            style="
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(5);
+            " >
+            <div class="welcome-box"
+                    style =
+                    "grid-column: 1/3;
+                    height: 52vw;
+                    background-image: url(../static/images/4.4.png);
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    max-width: 100%;
+                    position: center;"
+                    >
+                <div style="
+                    position: relative;
+                    margin: 15% 15% 15% 15%;
+                    " >
+                    <h1><strong>ようこそ!</strong></h1>
+                    <h1>そよかぜ幼稚園は、日本語と日本文化に触れながら、就学に向けた土台を育てる私立プリスクールです。</h1>
+                </div>
+            </div>
+
+
+
+          <div class="box" style="grid-column: 1/3; padding: 1% 2% 1% 2%">
+                <h2>ご提供内容</h2>
+            </div>
+
+            <div class="box" style="grid-column: 1/3">
+                <div class="sub-grid-container" style="
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  ">
+                    <div class="sub-box" style="box-shadow: 3px 3px #e8e7df;">
+                        <img src="../static/images/feature_hiragana.png" alt="" width = 100% />
+                        <h2>日本語イマージョン</h2>
+                        <p>子どもたちは、会話、歌、絵本、日々の活動を通して、一日を日本語で過ごします。あわせて、ひらがなや文字に親しみ、読む力・書く力の基礎も育てていきます。</p>
+                    </div>
+                    <div class="sub-box" style="box-shadow: 3px 3px #e8e7df; ">
+                        <img src="../static/images/feature_koinobori.png" alt="" width = 100% style="border-radius: 50%;"/>
+                        <h2>日本文化に親しむ活動</h2>
+                        <p>音楽、工作、遊び、読み聞かせ、季節の行事、外遊びや運動を通して、子どもたちは自然に日本文化に親しんでいきます。</p>
+                    </div>
+                    <div class="sub-box" style=" box-shadow: 3px 3px #e8e7df;">
+                        <img src="../static/images/feature_puzzle.png" alt="" width = 100% />
+                        <h2>就学準備</h2>
+                        <p>本園では、ことばの力、文字や数への親しみ、社会性、自立心、問題解決力など、就学に向けた土台をバランスよく育てます。</p>
+                    </div>
+                </div>
+            </div>
+
+
+           <div class="box" style="grid-column: 1/3; padding: 10px 20px 10px 20px; ">
+                <h2> 私たちについて </h2>
+            </div>
+            <div class="flex-box" style="display: flex; align-items: center; text-align: center; padding: 10% 5% 10% 5%;">
+                <p style="padding: 5% 5% 0% 5%">そよかぜ幼稚園は、北バージニアの静かな住宅街にある、認可を受けたファミリーデイホームです。
+夫婦である古澤理樹とコロル・アリシアが、娘のために、日本語と日本文化を大切にした豊かなプリスクール教育の場をつくりたいという思いから立ち上げました。
+
+当園では、主担当の先生1名を中心に保育・教育を行うため、受け入れ人数は少人数に限られます。
+2026–2027年度および2027–2028年度の運営を予定しています。</p>
+            </div>
+            <div class="box" style="display: flex; align-items: center; justify-content: center;">
+                <img src="../static/images/house.png" alt="" width = 100% />
+            </div>
+
+
+            <div class="box" style="grid-column: 1/3; padding: 10px 20px 10px 20px;">
+                <h2> 先生紹介 </h2>
+            </div>
+            <div class="box" style="grid-column: 1/3; background-color: #faf7d9; border-radius: 10px">
+                <div class="flex-container">
+                    <div class="flex-box" style="flex-grow: 1; padding: 8% 0% 8% 0%; justify-content: center;">
+                        <img src="../static/images/ricky_outside.jpg" alt="" class = "staff_img" width="60%"/>
+                    </div>
+                    <div class="flex-box" style="flex-grow: 2; flex-direction: column; padding: 10% 2% 10% 0%;">
+                        <h4><b>古澤理樹（ふるさわ りき）</b> <br> そよかぜ幼稚園　園長・指導員</h4>
+                        <p style="text-align:left;">理樹は日本語を母語とし、ワシントン日本語継承センターにおいて、日本語の教室で指導経験があります。</p>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-box" style="flex-grow: 1; padding: 8%; ">
+
+                    </div>
+                    <div class="flex-box" style="flex-grow: 2; flex-direction: column;">
+                        <h4><b>先生</b> <br> そよかぜ幼稚園　主担当教員</h4>
+                        <p style="text-align:left;">現在、教員を募集しております。
+詳しくは本ウェブサイト内の募集要項をご覧ください。</p>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  {% include 'footer_jp.html' %}
+  </body>
+</html>
