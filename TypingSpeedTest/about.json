@@ -1,4 +1,0 @@
-{"name":"Typing Speed Test",
-"category":"GUI",
-"overview":"This python program tests typing speed using an assortment of common English words.",
-"details":"The python program uses the tkinter package to create a GUI that loads a predetermined list of 100 words. The user uses a separate text field to type the 100 words while any errors from the reference words list are highlighted. A timer counts down from 60 seconds upon the first key press and then disables text entry functionality when the time is up. The number of characters, errors, and words typed in a minute are displayed. The user has the option to restart the test. "}
