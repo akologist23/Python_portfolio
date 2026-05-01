@@ -1,0 +1,4 @@
+{"name":"SAM.GOV Data",
+"category":"HTTP Requests & APIs",
+"overview":"This python program retrieves data from sam.gov using an api and creates a RESTful api of post-processed data.",
+"details":"This python program is set up in three modules. The first is a class to query sam.gov specifically for data on visitations to government agency websites. The second module web scrapes the agency name endpoints that the user can use to request data. The main module runs the frontend webpage that offers the base url and instructions for requesting data that include the capability to accept parameters in the query string."}
