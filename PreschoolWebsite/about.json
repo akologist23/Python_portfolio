@@ -1,0 +1,4 @@
+{"name":"Preschool Website",
+"category":"Data Science",
+"overview":"This python program (a copy) creates a real website for a private Japanese language preschool.",
+"details":"The python program (a copy) creates a real website (https://soyokaze.onrender.com/) for a private Japanese language preschool. The program uses a flask application for the back-end and an all-original html and css code for the front-end (no template used!). The CSS design relied on both grid and flexbox systems for layout. A button allows for a visitor to switch between pages written in English and Japanese, which are toggled between using GET and POST commands, respectively."}
