@@ -1,0 +1,4 @@
+{"name":"CitiBike Stations",
+"category":"Data Science",
+"overview":"This python notebook cleans and processes CitiBike Station data from NYC and uses bar charts and maps to visually explore the data.",
+"details":"This python script uses pandas, matplotlib, and plotly express to process and visualize the data. CitiBike Station data was pulled from an unauthenticated API and converted to a Pandas dataframe. Records with missing values were removed from the dataset, and checks were made for correct data types and duplicates. Data was filtered to desired columns. For visualizing CitiBike station capacity, data was aggregrated by region_id and has_kiosk and then rendered with a bar chart. The data show that most stations have a kiosk and most stations are in one region. Then the stations were mapped geographically, which indicated that most bikes were truly in NYC while the others were in NJ."}
